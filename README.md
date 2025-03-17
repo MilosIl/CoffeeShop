@@ -7,17 +7,17 @@
 The "Coffee Shop" project showcases our progress and skills gained through learning and practice. It reflects our ability to create a well-designed, functional, and user-friendly application. Through this project, we demonstrate our growth in frontend development and modern web technologies.
 
 Built by design of students from Quantox Academy: [link of design](https://www.figma.com/design/OkuGlbVZOxtCwzEu4Hf1hT/Cafe-Academy---Design?node-id=0-4799)
- 
+
 ## Technologies Used
 
 - **Frontend framework** : React
 - **State management** : Context API
-- **UI component library** : 
-- **CSS framework** : 
+- **UI component library** :
+- **CSS framework** :
 - **Linting & Formatting**: ESLint and Prettier
 - **Build Tool** : Vite
 - **Package manager** : npm
-  
+
 ## Project Setup
 
 ### Prerequisites
@@ -28,26 +28,29 @@ Built by design of students from Quantox Academy: [link of design](https://www.f
 #### Installing nvm and changing Node.js version
 
 1. Install `nvm` (Node Version Manager):
-    - For Windows, download and install from [nvm-windows](https://github.com/coreybutler/nvm-windows/releases).
-    - For macOS/Linux, use the following command:
-      ```sh
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-      ```
+
+   - For Windows, download and install from [nvm-windows](https://github.com/coreybutler/nvm-windows/releases).
+   - For macOS/Linux, use the following command:
+     ```sh
+     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+     ```
 
 2. Restart your terminal and verify the installation:
-    ```sh
-    nvm -v
-    ```
+
+   ```sh
+   nvm -v
+   ```
 
 3. Install the required Node.js version:
-    ```sh
-    nvm install 20.18.2
-    ```
+
+   ```sh
+   nvm install 20.18.2
+   ```
 
 4. Use the installed Node.js version:
-    ```sh
-    nvm use 20.18.2
-    ```
+   ```sh
+   nvm use 20.18.2
+   ```
 5. Check what version of Node.js is used:
    ```sh
    node -v
@@ -56,19 +59,21 @@ Built by design of students from Quantox Academy: [link of design](https://www.f
 ### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/MilosIl/CoffeeShop
-    cd CoffeeShop
-    ```
+
+   ```sh
+   git clone https://github.com/MilosIl/CoffeeShop
+   cd CoffeeShop
+   ```
 
 2. Install dependencies:
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
 
 ### Starting development server
 
 To start the development server with hot module replacement:
+
 ```sh
 npm run dev
 ```
@@ -76,6 +81,7 @@ npm run dev
 ### Building for Production
 
 To create a production build:
+
 ```sh
 npm run build
 ```
@@ -85,6 +91,7 @@ The output will be in the `dist` directory.
 ### Linting
 
 To run ESLint:
+
 ```sh
 npm run lint
 ```
@@ -92,6 +99,7 @@ npm run lint
 ### Formatting
 
 To format the code using Prettier:
+
 ```sh
 npm run format
 ```
@@ -99,6 +107,7 @@ npm run format
 ## Folder Structure
 
 The project structure is as follows:
+
 ```
 src/
   components/    # Reusable components
@@ -109,9 +118,35 @@ src/
   main.jsx       # Entry point
 ```
 
-## Component Documentation
+Every folder needs to have their `index.js` that will export all files from that folder.
 
-Each component is documented with prop types and usage examples. Refer to the `components` directory for detailed documentation on each component.
+## Component Structure
+
+Example of component:
+`Button.jsx`
+
+```
+export const Button = ({ label, handleClick, classNames }) => {
+  return (
+    <button onClick={handleClick} className={`${classNames}`}>
+      {label}
+    </button>
+  );
+};
+```
+
+Usage:
+
+```
+`App.jsx`
+```
+
+<Button
+label={"Click me"}
+handleClick={() => console.log("I'm clicked")}
+/>
+
+```
 
 ## State Management
 
@@ -129,7 +164,7 @@ Styling is done using CSS modules. Global styles are located in the `styles` dir
 
 #### Typography:
   - font-family:
-  
+
 #### Color palette
 Light theme:
 - primary-color:
@@ -152,9 +187,10 @@ The `master` branch is the production-ready branch. It contains the stable versi
 
 ## Contributing
 
-1. Fork the repository.
+1. Clone the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
 3. Make your changes.
 4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: Add some feature"`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
+```
