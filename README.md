@@ -1,12 +1,12 @@
 # Coffee Shop Application Documentation
 
-"Coffee Shop" is a collaborative project by **Quantox Academy** students, designed and developed under the supervision instructors. It showcases a modern design created by the design team and was developed by the frontend team from the **React and React Native** course.
+"Coffee Shop" is a collaborative project by **Quantox Academy** students, designed and developed under the supervision of instructors. It showcases a modern design created by the design team and was developed by the frontend team from the **React and React Native** course.
 
 ## Project Description
 
-"Coffee Shop" project showcases our progress and skills gained through learning and practice. It reflects our ability to create a well-designed, functional, and user-friendly application. Through this project, we demonstrate our growth in frontend development and modern web technologies.
+The "Coffee Shop" project showcases our progress and skills gained through learning and practice. It reflects our ability to create a well-designed, functional, and user-friendly application. Through this project, we demonstrate our growth in frontend development and modern web technologies.
 
-Build by design of students from Quantox Academy: [link of design](https://www.figma.com/design/OkuGlbVZOxtCwzEu4Hf1hT/Cafe-Academy---Design?node-id=0-4799)
+Built by design of students from Quantox Academy: [link of design](https://www.figma.com/design/OkuGlbVZOxtCwzEu4Hf1hT/Cafe-Academy---Design?node-id=0-4799)
  
 ## Technologies Used
 
@@ -14,8 +14,8 @@ Build by design of students from Quantox Academy: [link of design](https://www.f
 - **State management** : Context API
 - **UI component library** : 
 - **CSS framework** : 
-- **Linting & Formating**: ESLint and Prettier
-- **Build Tool** : vite
+- **Linting & Formatting**: ESLint and Prettier
+- **Build Tool** : Vite
 - **Package manager** : npm
   
 ## Project Setup
@@ -24,6 +24,34 @@ Build by design of students from Quantox Academy: [link of design](https://www.f
 
 - Node.js (v20.18.2)
 - npm (v10.9.0)
+
+#### Installing nvm and changing Node.js version
+
+1. Install `nvm` (Node Version Manager):
+    - For Windows, download and install from [nvm-windows](https://github.com/coreybutler/nvm-windows/releases).
+    - For macOS/Linux, use the following command:
+      ```sh
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+      ```
+
+2. Restart your terminal and verify the installation:
+    ```sh
+    nvm -v
+    ```
+
+3. Install the required Node.js version:
+    ```sh
+    nvm install 20.18.2
+    ```
+
+4. Use the installed Node.js version:
+    ```sh
+    nvm use 20.18.2
+    ```
+5. Check what version of Node.js is used:
+   ```sh
+   node -v
+   ```
 
 ### Installation
 
@@ -74,7 +102,7 @@ The project structure is as follows:
 ```
 src/
   components/    # Reusable components
-  providers/     # providers
+  providers/     # Providers
   pages/         # Page components
   styles/        # Global styles
   App.jsx        # Main application component
@@ -127,6 +155,6 @@ The `master` branch is the production-ready branch. It contains the stable versi
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
 3. Make your changes.
-4. Commit your changes (`git commit -m "Add some feature"`).
+4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: Add some feature"`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
