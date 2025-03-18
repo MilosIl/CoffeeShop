@@ -137,7 +137,7 @@ export const Button = ({ label, handleClick, classNames }) => {
 
 Usage:
 
-```
+
 `App.jsx`
 ```
 
@@ -193,4 +193,4 @@ The `master` branch is the production-ready branch. It contains the stable versi
 4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: Add some feature"`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
-```
+
