@@ -122,23 +122,20 @@ Every folder needs to have their `index.js` that will export all files from that
 
 ## Component Structure
 
-Example of component:
-`Button.jsx`
+Example of component: `Button.jsx`
 
 ```
-export const Button = ({ label, handleClick, classNames }) => {
+const Button = ({ label, handleClick, classNames }) => {
   return (
     <button onClick={handleClick} className={`${classNames}`}>
       {label}
     </button>
   );
 };
+export { Button }
 ```
 
-Usage:
-
-
-`App.jsx`
+Usage: `App.jsx`
 ```
 
 <Button
@@ -193,4 +190,3 @@ The `master` branch is the production-ready branch. It contains the stable versi
 4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: Add some feature"`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
-
