@@ -10,26 +10,25 @@
 // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.).
 // test: Adding missing tests or correcting existing tests.
 
-
 // Enforces the type of commit message to be one of the specified types
 const config = {
-  extends: ["@commitlint/config-conventional"],
+  extends: ['@commitlint/config-conventional'],
   rules: {
-    "type-enum": [
+    'type-enum': [
       2,
-      "always",
+      'always',
       [
-        "build", 
-        "chore", 
-        "ci", 
-        "docs", 
-        "feat", 
-        "fix", 
-        "perf", 
-        "refactor", 
-        "revert", 
-        "style", 
-        "test", 
+        'build',
+        'chore',
+        'ci',
+        'docs',
+        'feat',
+        'fix',
+        'perf',
+        'refactor',
+        'revert',
+        'style',
+        'test',
       ],
     ],
   },
