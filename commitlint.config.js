@@ -1,7 +1,6 @@
-// rules: This section defines custom rules for commit messages.
-// The array of allowed types:
 // build: Changes that affect the build system or external dependencies.
 // ci: Changes to CI configuration files and scripts.
+// chore: Other changes that don't modify src or test files.
 // docs: Documentation only changes.
 // feat: A new feature.
 // fix: A bug fix.
@@ -9,17 +8,31 @@
 // refactor: A code change that neither fixes a bug nor adds a feature.
 // revert: Reverts a previous commit.
 // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.).
+// test: Adding missing tests or correcting existing tests.
 
 
+// Enforces the type of commit message to be one of the specified types
 const config = {
-  extends: ['@commitlint/config-conventional'],
+  extends: ["@commitlint/config-conventional"],
   rules: {
-    'type-enum': [
+    "type-enum": [
       2,
-      'always',
-      ['ci',  'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'build']
-    ]
-  }
+      "always",
+      [
+        "build", 
+        "chore", 
+        "ci", 
+        "docs", 
+        "feat", 
+        "fix", 
+        "perf", 
+        "refactor", 
+        "revert", 
+        "style", 
+        "test", 
+      ],
+    ],
+  },
 };
 
 export default config;
