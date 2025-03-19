@@ -212,7 +212,6 @@ The `master` branch is the production-ready branch. It contains the stable versi
   - ✅ `"Good detailed body... (≤100 chars)"`
   - ❌ `"Very long body line exceeding 100 chars...."`
 
-
 ### 2. Scope Rules
 
 - **`scope-case`**: Enforces lowercase scope.
