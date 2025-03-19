@@ -193,10 +193,10 @@ The `master` branch is the production-ready branch. It contains the stable versi
 ## Contributing
 
 1. Clone the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
+2. Create a new branch (`git checkout -b task_number-feature-branch`).
 3. Make your changes.
-4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: Add some feature"`).
-5. Push to the branch (`git push origin feature-branch`).
+4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: add some feature"`).
+5. Push to the branch (`git push origin task_number-feature-branch`).
 6. Open a pull request.
 
 ## Commit rules
@@ -212,30 +212,14 @@ The `master` branch is the production-ready branch. It contains the stable versi
   - ✅ `"Good detailed body... (≤100 chars)"`
   - ❌ `"Very long body line exceeding 100 chars...."`
 
-### 2. Footer Rules
 
-- **`footer-leading-blank`**: Requires a blank line before the footer.
-
-  - ✅ `"feat: add feature\n\nBody...\n\nFooter..."`
-  - ❌ `"feat: add feature\n\nBody...\nFooter..."`
-
-- **`footer-max-line-length`**: Limits footer lines to **100 characters**.
-  - ✅ `"Footer within 100 chars"`
-  - ❌ `"Footer exceeding 100 chars..."`
-
-### 3. Header Rules
-
-- **`header-max-length`**: Limits the commit header to **100 characters**.
-  - ✅ `"fix: resolve login bug"`
-  - ❌ `"fix: resolve issue where user cannot log in due to missing token..."`
-
-### 4. Scope Rules
+### 2. Scope Rules
 
 - **`scope-case`**: Enforces lowercase scope.
   - ✅ `"feat(auth): add login"`
   - ❌ `"feat(Auth): add login"`
 
-### 5. Subject Rules
+### 3. Subject Rules
 
 - **`subject-case`**: Prevents capitalized subjects.
 
@@ -251,7 +235,7 @@ The `master` branch is the production-ready branch. It contains the stable versi
   - ✅ `"fix: update docs"`
   - ❌ `"fix: update docs."`
 
-### 6. Type Rules
+### 4. Type Rules
 
 - **`type-case`**: Enforces lowercase type.
 
