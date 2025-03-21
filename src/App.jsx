@@ -1,13 +1,15 @@
-
+import { BrowserRouter } from 'react-router';
 import './App.css';
+import { AppRouter } from './routes';
+import { Container } from './components';
 
 function App() {
-  
-
   return (
-    <>
-     <h1 className='text-3xl font-montserrat text-light-blue'>Test</h1>
-    </>
+    <BrowserRouter>
+      <Container>
+        <AppRouter />
+      </Container>
+    </BrowserRouter>
   );
 }
 
