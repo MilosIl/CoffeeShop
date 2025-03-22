@@ -1,7 +1,5 @@
 const RegisterPage = () => {
-  return(
-    <div>register page</div>
-  )
-}
+  return <div>register page</div>;
+};
 
-export {RegisterPage}
+export { RegisterPage };
