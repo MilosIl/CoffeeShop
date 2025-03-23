@@ -1,0 +1,7 @@
+export * from './IconBackArrow';
+export * from './IconNextArrow';
+export * from './IconError';
+export * from './IconLogo';
+export * from './IconLargeCoffee';
+export * from './IconMediumCoffee';
+export * from './IconSmallCoffee';
