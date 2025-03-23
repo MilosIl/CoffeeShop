@@ -10,13 +10,12 @@ Built by design of students from Quantox Academy: [link of design](https://www.f
 
 ## Technologies Used
 
-- **Frontend framework** : React
-- **State management** : Context API
-- **UI component library** :
-- **CSS framework** :
+- **Frontend framework**: React
+- **CSS framework**: TailwindCSS
+- **State management**: Context API
 - **Linting & Formatting**: ESLint and Prettier
-- **Build Tool** : Vite
-- **Package manager** : npm
+- **Build Tool**: Vite
+- **Package manager**: npm
 
 ## Project Setup
 
@@ -111,9 +110,11 @@ The project structure is as follows:
 ```
 src/
   components/    # Reusable components
-  providers/     # Providers
-  pages/         # Page components
-  styles/        # Global styles
+  providers/     # Providers and context
+  pages/         # Pages and their specific
+  routes/        # Routes for application
+  layout/        # Global components that build layout of page
+  App.css        # All styles for application
   App.jsx        # Main application component
   main.jsx       # Entry point
 ```
@@ -125,10 +126,10 @@ Every folder needs to have their `index.js` that will export all files from that
 Example of component: `Button.jsx`
 
 ```
-const Button = ({ label, handleClick, classNames }) => {
+const Button = ({ children, handleClick, className }) => {
   return (
-    <button onClick={handleClick} className={`${classNames}`}>
-      {label}
+    <button onClick={handleClick} className={`${className}`}>
+      {children}
     </button>
   );
 };
@@ -138,12 +139,8 @@ export { Button }
 Usage: `App.jsx`
 
 ```
-
-<Button
-label={"Click me"}
-handleClick={() => console.log("I'm clicked")}
-/>
-
+<Button handleClick={() => console.log("I'm clicked")}
+> Click here </Button>
 ```
 
 ## State Management
@@ -156,25 +153,18 @@ Routing is handled using `react-router`. Routes are defined in the `App.js` file
 
 ## Styling and Theme
 
-Styling is done using CSS modules. Global styles are located in the `styles` directory. The application supports theming, and themes can be switched dynamically.
+Styling is done using TailwindCSS. Global styles are located in the `App.css` file. The application supports theming, and themes use OS system info.
 
-#### Global styles:
+### Typography:
 
-#### Typography:
+- font-family: Montserrat
 
-- font-family:
+### Color palette
 
-#### Color palette
-
-Light theme:
-
-- primary-color:
-- background-color:
-
-Dark theme:
-
-- primary-color:
-- background-color:
+- dark-blue: #248CC5 <span style="display:inline-block;width:20px;height:20px;background-color:#248CC5;"></span>
+- light-blue: #164864 <span style="display:inline-block;width:20px;height:20px;background-color:#164864;"></span>
+- orange: #FF7F1B <span style="display:inline-block;width:20px;height:20px;background-color:#FF7F1B;"></span>
+- light-gray: #FAF5E4 <span style="display:inline-block;width:20px;height:20px;background-color:#FAF5E4;"></span>
 
 ## Branch Usage
 
