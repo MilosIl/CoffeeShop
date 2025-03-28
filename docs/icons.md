@@ -24,7 +24,9 @@ const IconSmallCoffee = () => {
 };
 export { IconSmallCoffee };
 ```
+
 5. **Add to Index File**: Add an export statement to `src\assets\icons\index.js` for the new icon.
+
    ```javascript
    export * from './IconSmallCoffee';
    ```

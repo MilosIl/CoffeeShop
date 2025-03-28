@@ -18,6 +18,7 @@ export { Button }
 ```
 
 ### Props:
+
 - `children`: The content to be displayed inside the button (e.g., text or icons).
 - `handleClick`: A function to handle the button's `onClick` event.
 - `className`: A string to apply custom CSS classes for styling.
@@ -25,8 +26,8 @@ export { Button }
 ### Usage: `App.jsx`
 
 ```
-<Button 
-  handleClick={() => console.log("I'm clicked")} 
+<Button
+  handleClick={() => console.log("I'm clicked")}
   className="primary-button"
 >
   Click here
