@@ -1,6 +1,10 @@
 # Component structure guide
 
-Example of component: `Button.jsx`
+## Button Component
+
+The `Button` component is a reusable UI element designed to handle user interactions. It accepts customizable properties to adapt to different use cases.
+
+### Example of component: `Button.jsx`
 
 ```
 const Button = ({ children, handleClick, className }) => {
@@ -13,9 +17,18 @@ const Button = ({ children, handleClick, className }) => {
 export { Button }
 ```
 
-Usage: `App.jsx`
+### Props:
+- `children`: The content to be displayed inside the button (e.g., text or icons).
+- `handleClick`: A function to handle the button's `onClick` event.
+- `className`: A string to apply custom CSS classes for styling.
+
+### Usage: `App.jsx`
 
 ```
-<Button handleClick={() => console.log("I'm clicked")}
-> Click here </Button>
+<Button 
+  handleClick={() => console.log("I'm clicked")} 
+  className="primary-button"
+>
+  Click here
+</Button>
 ```

@@ -8,7 +8,15 @@ Styling is done using TailwindCSS. Global styles are located in the `App.css` fi
 
 ### Color palette
 
-- dark-blue: #248CC5 <span style="display:inline-block;width:20px;height:20px;background-color:#248CC5;"></span>
-- light-blue: #164864 <span style="display:inline-block;width:20px;height:20px;background-color:#164864;"></span>
-- orange: #FF7F1B <span style="display:inline-block;width:20px;height:20px;background-color:#FF7F1B;"></span>
-- light-gray: #FAF5E4 <span style="display:inline-block;width:20px;height:20px;background-color:#FAF5E4;"></span>
+- dark-blue: #164864 <span style="display:inline-block;width:14px;height:14px;background-color:#164864;"></span>
+- light-blue: #248CC5 <span style="display:inline-block;width:14px;height:14px;background-color:#248cc5;"></span>
+- orange: #FF7F1B <span style="display:inline-block;width:14px;height:14px;background-color:#FF7F1B;"></span>
+- light-gray: #FAF5E4 <span style="display:inline-block;width:14px;height:14px;background-color:#FAF5E4;"></span>
+
+#### Light theme
+
+- font color: #164864 <span style="display:inline-block;width:14px;height:14px;background-color:#164864;"></span>
+
+#### Dark theme
+
+- font color: white <span style="display:inline-block;width:14px;height:14px;background-color:#ffffff;"></span>
