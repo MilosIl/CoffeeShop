@@ -5,3 +5,4 @@ export * from './IconLogo';
 export * from './IconLargeCoffee';
 export * from './IconMediumCoffee';
 export * from './IconSmallCoffee';
+export * from './IconMinus';

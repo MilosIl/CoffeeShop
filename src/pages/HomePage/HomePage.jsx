@@ -1,4 +1,4 @@
-import { CoffeCard } from "../../components/CoffeeCard";
+import { CoffeCard } from '../../components/CoffeeCard';
 
 const HomePage = () => {
   return (

@@ -1,46 +1,37 @@
-import CoffeeCup from "../assets/coffee-cup.svg";
-import CoffeeSplash from "../assets/coffee-splash.svg"
-import ButtonCup from "../assets/button-cup.svg"
+import { CoffeeImage } from "../components/CoffeeImage"
+import { IconMinus } from "../assets/icons/IconMinus";
 const CoffeCard = () => {
     return (
-        <div>
-            {/* <div className="bg-dark-blue rounded-[12px] flex max-w-[340px] flex-wrap">
-            <img src={CoffeeSplash}/>
-            <img src={CoffeeCup}/>
-            <h3 className="font-montserrat text-base font-semibold text-text">Espresso</h3>
-            <p className="font-montserrat text-base font-semibold text-white">150 RSD</p>
-            <p className="font-montserrat text-[12px] font-normal text-text flex">Espresso je jaka kafa napravljena 
-            pod visokim
-            pritiskom vruće 
-            vode kroz fino mlevenu kafu.</p>
-            </div> */}
-            <div className="flex items-center bg-dark-blue rounded-[12px] max-w-[340px]">
-                <div className="mr-4 bg-text">
-                    <img src={CoffeeCup} className="w-20 h-20"/>
-                </div>
 
-                <div className="flex-1">
-                    <div className="flex justify-between items-center">
-                        <h3 className="font-montserrat text-base/21px font-semibold text-text mt-[15.37px]">Espresso</h3>
-                        <span className="font-montserrat text-[12px]/21px font-normal text-white mt-[16.27px] mr-[18.67px]">150 RSD</span>
-                    </div>
-                        <p className="font-montserrat text-[12px] font-normal text-text pr-[18.67px]">Espresso je jaka kafa napravljena 
-                            pod visokim
-                            pritiskom vruće 
-                            vode kroz fino mlevenu kafu.
-                        </p>
-                        <div className="flex space-x-2 mt-2">
-                            <button className="w-8 h-8 bg-text text-black rounded-full text-sm flex items-center justify-center"><img src={ButtonCup} className="w-[8.57px] h-[10.29px]"/></button>
-                            <button className="w-8 h-8 bg-text text-black rounded-full text-sm flex items-center justify-center"><img src={ButtonCup}/></button>
-                            <button className="w-8 h-8 bg-text text-black rounded-full text-sm flex items-center justify-center"><img src={ButtonCup}/></button>
-                        </div>
-                </div>
-
-
+        <div className="flex items-center bg-dark-blue rounded-xl gap-3 text-white max-w-fit p-4">
+            <div className="bg-light-gray rounded-lg">
+                <CoffeeImage />
             </div>
+            <div className="flex flex-col gap-2">
 
+
+                <h3 className=" text-base font-semibold ">Espresso kratki</h3>
+
+                <p className=" text-xs font-normal max-w-50">Svojom bogatom aromom i punim ukusom,
+                    ova mala ali moćna kafica čini savršen početak dana.
+                </p>
+
+
+
+                <div className="flex justify-between items-end">
+                    <div className="flex flex-col">
+                        <span>Cena</span>
+                        <span>120,00 RSD</span>
+                    </div>
+                    <div className="w-6 h-6 rounded-full bg-[#248CC5] flex items-center justify-center relative cursor-pointer">
+                        <span className="absolute"> {IconMinus()}</span>
+                        <span className="rotate-90 absolute">{IconMinus()}</span>
+                    </div>
+                </div>
+            </div>
         </div>
+
     );
 }
 
-export {CoffeCard};
+export { CoffeCard };
