@@ -6,103 +6,16 @@
 
 The "Coffee Shop" project showcases our progress and skills gained through learning and practice. It reflects our ability to create a well-designed, functional, and user-friendly application. Through this project, we demonstrate our growth in frontend development and modern web technologies.
 
-Built by design of students from Quantox Academy: [link of design](https://www.figma.com/design/OkuGlbVZOxtCwzEu4Hf1hT/Cafe-Academy---Design?node-id=0-4799)
+Built by design students from Quantox Academy: [link to design](https://www.figma.com/design/OkuGlbVZOxtCwzEu4Hf1hT/Cafe-Academy---Design?node-id=0-4799)
 
 ## Technologies Used
 
-- **Frontend framework** : React
-- **State management** : Context API
-- **UI component library** :
-- **CSS framework** :
+- **Frontend framework**: React
+- **CSS framework**: TailwindCSS
+- **State management**: Context API
 - **Linting & Formatting**: ESLint and Prettier
-- **Build Tool** : Vite
-- **Package manager** : npm
-
-## Project Setup
-
-### Prerequisites
-
-- Node.js (v20.18.2)
-- npm (v10.9.0)
-
-#### Installing nvm and changing Node.js version
-
-1. Install `nvm` (Node Version Manager):
-
-   - For Windows, download and install from [nvm-windows](https://github.com/coreybutler/nvm-windows/releases).
-   - For macOS/Linux, use the following command:
-     ```sh
-     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-     ```
-
-2. Restart your terminal and verify the installation:
-
-   ```sh
-   nvm -v
-   ```
-
-3. Install the required Node.js version:
-
-   ```sh
-   nvm install 20.18.2
-   ```
-
-4. Use the installed Node.js version:
-   ```sh
-   nvm use 20.18.2
-   ```
-5. Check what version of Node.js is used:
-   ```sh
-   node -v
-   ```
-
-### Installation
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/MilosIl/CoffeeShop
-   cd CoffeeShop
-   ```
-
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-
-### Starting development server
-
-To start the development server with hot module replacement:
-
-```sh
-npm run dev
-```
-
-### Building for Production
-
-To create a production build:
-
-```sh
-npm run build
-```
-
-The output will be in the `dist` directory.
-
-### Linting
-
-To run ESLint:
-
-```sh
-npm run lint
-```
-
-### Formatting
-
-To format the code using Prettier:
-
-```sh
-npm run format
-```
+- **Build Tool**: Vite
+- **Package manager**: npm
 
 ## Folder Structure
 
@@ -111,142 +24,24 @@ The project structure is as follows:
 ```
 src/
   components/    # Reusable components
-  providers/     # Providers
-  pages/         # Page components
-  styles/        # Global styles
+  providers/     # Providers and context
+  pages/         # Pages and their specifics
+  routes/        # Routes for the application
+  layout/        # Global components that build the layout of the page
+  App.css        # All styles for the application
   App.jsx        # Main application component
   main.jsx       # Entry point
 ```
 
-Every folder needs to have their `index.js` that will export all files from that folder.
+Every folder needs to have its `index.js` that will export all files from that folder.
 
-## Component Structure
+## Guides to use
 
-Example of component: `Button.jsx`
-
-```
-const Button = ({ label, handleClick, classNames }) => {
-  return (
-    <button onClick={handleClick} className={`${classNames}`}>
-      {label}
-    </button>
-  );
-};
-export { Button }
-```
-
-Usage: `App.jsx`
-
-```
-
-<Button
-label={"Click me"}
-handleClick={() => console.log("I'm clicked")}
-/>
-
-```
-
-## State Management
-
-State is managed using ContextAPI. Context providers are located in the `provider/context` directory. Each context is responsible for a specific part of the application state.
-
-## Routing
-
-Routing is handled using `react-router`. Routes are defined in the `App.js` file. Each route corresponds to a page component located in the `pages` directory.
-
-## Styling and Theme
-
-Styling is done using CSS modules. Global styles are located in the `styles` directory. The application supports theming, and themes can be switched dynamically.
-
-#### Global styles:
-
-#### Typography:
-
-- font-family:
-
-#### Color palette
-
-Light theme:
-
-- primary-color:
-- background-color:
-
-Dark theme:
-
-- primary-color:
-- background-color:
-
-## Branch Usage
-
-### Development Branch
-
-The `development` branch is used for active development. All new features, bug fixes, and other changes are first committed to this branch.
-
-### Staging Branch
-
-The `staging` branch is used for testing the application before it is released to production. Changes from the `development` branch are merged into the `staging` branch for testing. This branch should be stable and free of major bugs.
-
-### Master Branch
-
-The `master` branch is the production-ready branch. It contains the stable version of the application that is deployed to production. Only thoroughly tested and approved changes from the `staging` branch are merged into the `master` branch.
-
-## Contributing
-
-1. Clone the repository.
-2. Create a new branch (`git checkout -b task_number-feature-branch`).
-3. Make your changes.
-4. Commit your changes using the convention from `commitlint.config.js` (`git commit -m "feat: add some feature"`).
-5. Push to the branch (`git push origin task_number-feature-branch`).
-6. Open a pull request.
-
-## Commit rules
-
-### 1. Body Rules
-
-- **`body-leading-blank`**: Requires a blank line before the commit body.
-
-  - ✅ `"feat: add feature\n\nThis feature..."`
-  - ❌ `"feat: add feature\nThis feature..."`
-
-- **`body-max-line-length`**: Limits each line in the commit body to **100 characters**.
-  - ✅ `"Good detailed body... (≤100 chars)"`
-  - ❌ `"Very long body line exceeding 100 chars...."`
-
-### 2. Scope Rules
-
-- **`scope-case`**: Enforces lowercase scope.
-  - ✅ `"feat(auth): add login"`
-  - ❌ `"feat(Auth): add login"`
-
-### 3. Subject Rules
-
-- **`subject-case`**: Prevents capitalized subjects.
-
-  - ✅ `"fix: improve performance"`
-  - ❌ `"fix: Improve performance"`
-
-- **`subject-empty`**: Subject must not be empty.
-
-  - ✅ `"feat: add API"`
-  - ❌ `"feat:"`
-
-- **`subject-full-stop`**: Subject must not end with a period (`.`).
-  - ✅ `"fix: update docs"`
-  - ❌ `"fix: update docs."`
-
-### 4. Type Rules
-
-- **`type-case`**: Enforces lowercase type.
-
-  - ✅ `"fix: update deps"`
-  - ❌ `"Fix: update deps"`
-
-- **`type-empty`**: Type must not be empty.
-
-  - ✅ `"feat: add logging"`
-  - ❌ `": add logging"`
-
-- **`type-enum`**: Only allows specific commit types:
-  - Allowed: `"build"`, `"chore"`, `"ci"`, `"docs"`, `"feat"`, `"fix"`, `"perf"`, `"refactor"`, `"revert"`, `"style"`, `"test"`, `"translation"`, `"security"`, `"changeset"`
-  - ✅ `"feat: new feature"`
-  - ❌ `"new: something"`
+- 📂 [Branches](/docs/branches.md)
+- 🧩 [Components](/docs/components.md)
+- 🛠️ [Linting and formatting](/docs/lint-formating.md)
+- 📃 [Global State](/docs/state.md)
+- 🖼️ [Icons](/docs/icons.md)
+- 📦 [Installing](/docs/installation.md)
+- 🔀 [Routing](/docs/routing.md)
+- 🎨 [Styles](/docs/styles.md)
