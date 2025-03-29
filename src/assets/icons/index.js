@@ -6,3 +6,4 @@ export * from './IconLargeCoffee';
 export * from './IconMediumCoffee';
 export * from './IconSmallCoffee';
 export * from './IconMinus';
+export * from './IconShopCart';
