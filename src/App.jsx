@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router';
-import './App.css';
-import { AppRouter } from './routes';
-import { Header, Container } from './layout';
+import '@/App.css';
+import { AppRouter } from '@/routes';
+import { Header, Container } from '@/layout';
 
 function App() {
   return (
