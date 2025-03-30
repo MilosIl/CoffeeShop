@@ -4,11 +4,18 @@ import { Select, Button } from "../components/ui";
 import { BEAN, MILK } from "../constants";
 import { useState } from "react";
 
-const CoffeeCard = () => {
+const CoffeeCard = ({ name, price, text }) => {
     const [isToggled, setIsToggled] = useState(false);
-
+    const [counter, setCounter] = useState(1);
+    const [selectedSize, setSelectedSize] = useState(null);
 
     const handleToggle = () => { setIsToggled(true) };
+    const increaseCounter = () => setCounter(counter + 1);
+    const decreaseCounter = () => {
+        if (counter > 1) setCounter(counter - 1)
+    };
+    const handleSelect = (size) => { setSelectedSize(size); };
+
 
     return (
         <>
@@ -20,16 +27,16 @@ const CoffeeCard = () => {
                         </div>
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full font-bold">
-                                <h3 className="text-base">Espresso kratki</h3>
-                                <span className="text-xs">120,00 RSD</span>
+                                <h3 className="text-base">{name}</h3>
+                                <span className="text-xs">{price}</span>
                             </div>
                             <p className="font-normal text-xs">
-                                Svojom bogatom aromom i punim ukusom, ova mala ali moćna kafica čini savršen početak dana.
+                                {text}
                             </p>
                             <div className="flex justify-start items-center gap-3.5">
-                                <IconSmallCoffee />
-                                <IconMediumCoffee />
-                                <IconLargeCoffee />
+                                <button className="cursor-pointer" onClick={() => handleSelect("small")}><IconSmallCoffee fillColor={selectedSize === "small" ? "#000" : "#164864"} /></button>
+                                <button className="cursor-pointer" onClick={() => handleSelect("medium")}><IconMediumCoffee fillColor={selectedSize === "medium" ? "#000" : "#164864"} /></button>
+                                <button className="cursor-pointer" onClick={() => handleSelect("large")}><IconLargeCoffee fillColor={selectedSize === "large" ? "#000" : "#164864"} /></button>
                             </div>
                             <div className="flex items-center gap-3.5">
                                 <Select label="Zrno" options={BEAN} />
@@ -41,13 +48,13 @@ const CoffeeCard = () => {
                     <div className="flex justify-between items-center">
                         <div className="flex items-center gap-3">
 
-                            <button className="relative flex justify-center items-center bg-light-blue rounded-full w-6 h-6 cursor-pointer">
+                            <button className="relative flex justify-center items-center bg-light-blue rounded-full w-6 h-6 cursor-pointer" onClick={decreaseCounter}>
                                 <span className="absolute">
                                     <IconMinus />
                                 </span>
                             </button>
-                            <span className="text-white text-xl">counter</span>
-                            <button className="relative flex justify-center items-center bg-light-blue rounded-full w-6 h-6 cursor-pointer">
+                            <span className="text-white text-xl">{counter}</span>
+                            <button className="relative flex justify-center items-center bg-light-blue rounded-full w-6 h-6 cursor-pointer" onClick={increaseCounter}>
                                 <span className="absolute">
                                     <IconMinus />
                                 </span>
@@ -70,14 +77,14 @@ const CoffeeCard = () => {
                         <CoffeeImage />
                     </div>
                     <div className="flex flex-col gap-2">
-                        <h3 className="font-semibold text-base">Espresso kratki</h3>
+                        <h3 className="font-semibold text-base">{name}</h3>
                         <p className="font-normal text-xs">
-                            Svojom bogatom aromom i punim ukusom, ova mala ali moćna kafica čini savršen početak dana.
+                            {text}
                         </p>
                         <div className="flex justify-between items-end">
                             <div className="flex flex-col">
                                 <span>Cena</span>
-                                <span>120,00 RSD</span>
+                                <span>{price}</span>
                             </div>
                             <button
                                 className="relative flex justify-center items-center bg-light-blue rounded-full w-6 h-6 cursor-pointer"
