@@ -1,4 +1,4 @@
-import { ShopCart } from '@/components/ShopCart/ShopCart';
+import { ShopCart } from '@/components/ShopCart/';
 
 import { CoffeeCard } from '@/components';
 import COFFEE_DATA from '@/data/coffee_data.json';
