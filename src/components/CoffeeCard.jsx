@@ -8,6 +8,8 @@ const CoffeeCard = ({ name, price, text }) => {
     const [isToggled, setIsToggled] = useState(false);
     const [counter, setCounter] = useState(1);
     const [selectedSize, setSelectedSize] = useState(null);
+    const [selectedBean, setSelectedBean] = useState(null);
+    const [selectedMilk, setSelectedMilk] = useState(null)
 
     const handleToggle = () => { setIsToggled(true) };
     const increaseCounter = () => setCounter(counter + 1);
@@ -15,6 +17,17 @@ const CoffeeCard = ({ name, price, text }) => {
         if (counter > 1) setCounter(counter - 1)
     };
     const handleSelect = (size) => { setSelectedSize(size); };
+    const handleAddToCart = () => {
+        const coffeeOrder = {
+            name,
+            price,
+            size: selectedSize,
+            bean: selectedBean,
+            milk: selectedMilk,
+            counter: counter,
+        }
+        console.log("Porudzbina dodata u korpu:", coffeeOrder);
+    }
 
 
     return (
@@ -39,8 +52,8 @@ const CoffeeCard = ({ name, price, text }) => {
                                 <button className="cursor-pointer" onClick={() => handleSelect("large")}><IconLargeCoffee fillColor={selectedSize === "large" ? "#000" : "#164864"} /></button>
                             </div>
                             <div className="flex items-center gap-3.5">
-                                <Select label="Zrno" options={BEAN} />
-                                <Select label="Mleko" options={MILK} />
+                                <Select label="Zrno" options={BEAN} onChange={(e) => setSelectedBean(e.target.value)} />
+                                <Select label="Mleko" options={MILK} onChange={(e) => setSelectedMilk(e.target.value)} />
                             </div>
                         </div>
                     </div>
@@ -64,13 +77,14 @@ const CoffeeCard = ({ name, price, text }) => {
                             </button>
                         </div>
                         <Button
-                            className="bg-gradient-to-b from-light-blue to-dark-blue px-3.5 py-2 rounded-xl font-bold text-xs"
+                            className="bg-gradient-to-b from-light-blue to-dark-blue px-3.5 py-2 rounded-xl font-bold text-xs cursor-pointer"
                             icon={<IconShopCart />}
+                            handleClick={handleAddToCart}
                         >
                             Dodaj u korpu
                         </Button>
                     </div>
-                </div>
+                </div >
             ) : (
                 <div className="flex items-center gap-3 bg-dark-blue p-4 rounded-xl max-w-fit text-white">
                     <div className="bg-light-gray rounded-lg">

@@ -1,4 +1,4 @@
-const Select = ({ id, options, label }) => {
+const Select = ({ id, options, label, onChange }) => {
   return (
     <div className="relative bg-transparent mt-4 mb-1 text-light-gray/60">
       <label htmlFor={id} className="block">
@@ -8,6 +8,7 @@ const Select = ({ id, options, label }) => {
         <select
           id={id}
           className="bg-transparent pt-2 pr-2.5 pb-1.5 pl-3 border border-light-gray rounded-md outline-light-gray w-full text-light-gray appearance-none"
+          onChange={onChange}
         >
           <option value="" disabled hidden className="font-medium text-2xs">{`Odaberi ${label}`}</option>
           {options.map((option) => (
