@@ -1,6 +1,7 @@
 import { Button } from '../ui/Button';
 import { IconNextArrow } from '@/assets/icons';
 import { ShopCartItem } from './ShopCartItem';
+import { useState } from 'react';
 
 const DATA = [
   { id: 1, name: 'Espreso', amount: 2 },
@@ -10,8 +11,14 @@ const DATA = [
 ];
 
 const ShopCart = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bottom-0 bg-light-blue px-6 pt-2 pb-5 rounded-t-lg">
+    <div
+      className={` bottom-0 ease-in-out bg-light-blue px-6 pt-2 pb-5 rounded-t-lg transition-transform duration-300 ${
+        isOpen ? 'translate-y-0' : 'translate-y-full'
+      }`}
+      onClick={() => setIsOpen(!isOpen)}
+    >
       <div className="bg-white/45 mx-auto mt-2 mb-11.5 rounded w-1/5 h-2"></div>
       <div className="flex justify-between items-center font-bold text-white text-base leading-6 tracking-tight">
         <div className="flex flex-col">
@@ -25,14 +32,20 @@ const ShopCart = () => {
           Naruči
         </Button>
       </div>
-      <div>
-        <hr className="my-5 text-white/20" />
-        {DATA.map((item) => {
-          return (
-            <ShopCartItem key={item.id} amount={item.amount} name={item.name} />
-          );
-        })}
-      </div>
+      {isOpen && (
+        <div>
+          <hr className="my-5 text-white/20" />
+          {DATA.map((item) => {
+            return (
+              <ShopCartItem
+                key={item.id}
+                amount={item.amount}
+                name={item.name}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
