@@ -4,31 +4,43 @@ import { Select, Button } from "../components/ui";
 import { BEAN, MILK } from "../constants";
 import { useState } from "react";
 
-const CoffeeCard = ({ name, price, text }) => {
+const CoffeeCard = ({ id, coffee_name, price, text }) => {
     const [isToggled, setIsToggled] = useState(false);
     const [counter, setCounter] = useState(1);
-    const [selectedSize, setSelectedSize] = useState(null);
-    const [selectedBean, setSelectedBean] = useState(null);
-    const [selectedMilk, setSelectedMilk] = useState(null)
+    const [selectedSize, setSelectedSize] = useState("small");
+    const [selectedBean, setSelectedBean] = useState(BEAN[0]);
+    const [selectedMilk, setSelectedMilk] = useState(MILK[0]);
 
     const handleToggle = () => { setIsToggled(true) };
     const increaseCounter = () => setCounter(counter + 1);
     const decreaseCounter = () => {
-        if (counter > 1) setCounter(counter - 1)
+        if (counter > 1) {
+            setCounter(counter - 1)
+        } else {
+            setCounter(1);
+            setIsToggled(false);
+        }
+
     };
     const handleSelect = (size) => { setSelectedSize(size); };
     const handleAddToCart = () => {
+        let multiplier = 1;
+        if (selectedSize === 'medium') multiplier = 1.5;
+        if (selectedSize === 'large') multiplier = 2;
+
+        const finalPrice = price * multiplier * counter;
+
         const coffeeOrder = {
-            name,
-            price,
+            id: `order_${id}`,
+            coffee_name: coffee_name,
+            price: finalPrice,
             size: selectedSize,
             bean: selectedBean,
             milk: selectedMilk,
-            counter: counter,
+            quantity: counter,
         }
         console.log("Porudzbina dodata u korpu:", coffeeOrder);
     }
-
 
     return (
         <>
@@ -41,7 +53,7 @@ const CoffeeCard = ({ name, price, text }) => {
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full font-bold">
                                 <h3 className="text-base">{name}</h3>
-                                <span className="text-xs">{price}</span>
+                                <span className="text-xs">{price} RSD</span>
                             </div>
                             <p className="font-normal text-xs">
                                 {text}
@@ -98,7 +110,7 @@ const CoffeeCard = ({ name, price, text }) => {
                         <div className="flex justify-between items-end">
                             <div className="flex flex-col">
                                 <span>Cena</span>
-                                <span>{price}</span>
+                                <span>{price} RSD</span>
                             </div>
                             <button
                                 className="relative flex justify-center items-center bg-light-blue rounded-full w-6 h-6 cursor-pointer"
