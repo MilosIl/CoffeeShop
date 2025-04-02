@@ -1,0 +1,163 @@
+[
+  {
+    "id": "order_1",
+    "user_id": 1,
+    "coffee_list": [
+      {
+        "coffee_id": "kafa_1",
+        "coffee_name": "Espresso kratki",
+        "size": "small",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 2,
+        "price": 120
+      },
+      {
+        "coffee_id": "kafa_5",
+        "coffee_name": "Americano",
+        "size": "large",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 150
+      },
+      {
+        "coffee_id": "kafa_6",
+        "coffee_name": "Cappuccino",
+        "size": "medium",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 160
+      },
+      {
+        "coffee_id": "kafa_11",
+        "coffee_name": "Ice Coffee",
+        "size": "small",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 200
+      }
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "order_2",
+    "user_id": 1,
+    "coffee_list": [
+      {
+        "coffee_id": "kafa_2",
+        "coffee_name": "Espresso dugi",
+        "size": "large",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 130
+      },
+      {
+        "coffee_id": "kafa_3",
+        "coffee_name": "Espresso kratki sa mlekom",
+        "size": "medium",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 140
+      },
+      {
+        "coffee_id": "kafa_4",
+        "coffee_name": "Espresso dugi sa mlekom",
+        "size": "small",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 2,
+        "price": 150
+      }
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "order_3",
+    "user_id": 1,
+    "coffee_list": [
+      {
+        "coffee_id": "kafa_7",
+        "coffee_name": "Latte",
+        "size": "large",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 170
+      },
+      {
+        "coffee_id": "kafa_8",
+        "coffee_name": "Macchiato",
+        "size": "medium",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 160
+      }
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "order_4",
+    "user_id": 2,
+    "coffee_list": [
+      {
+        "coffee_id": "kafa_10",
+        "coffee_name": "Flat White",
+        "size": "small",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 2,
+        "price": 170
+      }
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "order_5",
+    "user_id": 2,
+    "coffee_list": [
+      {
+        "coffee_id": "kafa_1",
+        "coffee_name": "Espresso kratki",
+        "size": "small",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 2,
+        "price": 120
+      },
+      {
+        "coffee_id": "kafa_5",
+        "coffee_name": "Americano",
+        "size": "large",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 5,
+        "price": 150
+      },
+      {
+        "coffee_id": "kafa_6",
+        "coffee_name": "Cappuccino",
+        "size": "medium",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 2,
+        "price": 160
+      },
+      {
+        "coffee_id": "kafa_9",
+        "coffee_name": "Mocha",
+        "size": "small",
+        "milk": "none",
+        "bean": "none",
+        "quantity": 1,
+        "price": 180
+      }
+    ],
+    "status": "completed"
+  }
+]

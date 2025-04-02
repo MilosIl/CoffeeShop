@@ -6,8 +6,8 @@ import { Header, Container } from './layout';
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Container>
-        <Header />
         <AppRouter />
       </Container>
     </BrowserRouter>

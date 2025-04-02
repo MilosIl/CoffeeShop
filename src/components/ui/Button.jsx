@@ -1,7 +1,7 @@
-const Button = ({ children, handleClick, className, icon }) => {
+const Button = ({ children, onClick, className, icon }) => {
   return (
     <button
-      onClick={handleClick}
+      onClick={onClick}
       className={`${className} ${icon ? 'flex gap-3 items-center justify-center' : ''}  text-white`}
     >
       <span>{icon}</span>

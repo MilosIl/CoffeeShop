@@ -1,11 +1,21 @@
-import { CoffeeCard } from '../../components/CoffeeCard';
+import { CoffeeCard } from '@/components';
+import COFFEE_DATA from '@/data/coffee_data.json';
 
 const HomePage = () => {
+  console.log(COFFEE_DATA);
   return (
-    <div>
-      <h1>Home Page</h1>
-      <CoffeeCard id="1" coffee_name="Espresso kratki" price="150" text="Svojom bogatom aromom i punim ukusom, ova mala ali moćna kafica čini savršen početak dana." />
-
+    <div className="flex md:flex-row flex-col md:flex-wrap gap-2">
+      {COFFEE_DATA.map((coffee) => {
+        return (
+          <CoffeeCard
+            key={coffee.id}
+            id={coffee.id}
+            name={coffee.name}
+            price={coffee.price}
+            description={coffee.description}
+          />
+        );
+      })}
     </div>
   );
 };

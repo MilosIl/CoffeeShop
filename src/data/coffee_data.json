@@ -1,0 +1,68 @@
+[
+  {
+    "id": "kafa_1",
+    "name": "Espresso kratki",
+    "description": "Svojom bogatom aromom i punim ukusom, ova mala ali moćna kafica čini savršen početak dana.",
+    "price": 120
+  },
+  {
+    "id": "kafa_2",
+    "name": "Espresso dugi",
+    "description": "Produžena verzija espressa, sa malo više vode, što rezultira blažom notom i produženim uživanjem u kafi.",
+    "price": 130
+  },
+  {
+    "id": "kafa_3",
+    "name": "Espresso kratki sa mlekom",
+    "description": "Intenzivna kafa obogaćena kremastim dodatkom mleka, stvarajući bogat i zadovoljavajući ukus koji osvaja.",
+    "price": 140
+  },
+  {
+    "id": "kafa_4",
+    "name": "Espresso dugi sa mlekom",
+    "description": "Espresso obogaćen mlekom za savršenu harmoniju arome i ukusa. Idealan izbor za one koji vole blaži ukus.",
+    "price": 150
+  },
+  {
+    "id": "kafa_5",
+    "name": "Americano",
+    "description": "Blaga i osvežavajuća kafa sa dodatkom tople vode, savršena za duže uživanje u svakom gutljaju.",
+    "price": 150
+  },
+  {
+    "id": "kafa_6",
+    "name": "Cappuccino",
+    "description": "Savršena kombinacija espressa, toplog mleka i bogate mlečne pene za kremasto uživanje.",
+    "price": 180
+  },
+  {
+    "id": "kafa_7",
+    "name": "Latte",
+    "description": "Blaga i kremasta kafa sa obiljem mleka, idealna za ljubitelje nežnijih ukusa.",
+    "price": 180
+  },
+  {
+    "id": "kafa_8",
+    "name": "Macchiato",
+    "description": "Espresso sa kapljicom mlečne pene, pružajući savršen balans intenziteta i kremastog ukusa.",
+    "price": 160
+  },
+  {
+    "id": "kafa_9",
+    "name": "Mocha",
+    "description": "Kombinacija kafe, čokolade i mleka koja stvara bogat i sladak napitak za prave sladokusce.",
+    "price": 160
+  },
+  {
+    "id": "kafa_10",
+    "name": "Flat White",
+    "description": "Kremasta kafa sa savršenim balansom između espressa i mleka, idealna za ljubitelje intenzivnog ukusa.",
+    "price": 200
+  },
+  {
+    "id": "kafa_11",
+    "name": "Ice Coffee",
+    "description": "Osvežavajuća hladna kafa koja kombinuje bogat ukus espressa sa ledom i mlekom.",
+    "price": 200
+  }
+]
