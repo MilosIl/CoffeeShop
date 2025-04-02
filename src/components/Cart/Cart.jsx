@@ -2,28 +2,27 @@ import { useState } from 'react';
 import { Button } from '../ui/Button';
 import { IconNextArrow } from '@/assets/icons';
 import { CartItem } from './CartItem';
-import FAKE_DATA from '../../../../data/orders_data.json';
+import DATA from '@/data/orders_data.json';
 import { totalPrice, formatPrice } from '@/utils';
 import { useNavigate } from 'react-router';
 
-const NUMBER = 4
+const NUMBER = 4;
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const total = totalPrice(FAKE_DATA[NUMBER].coffee_list);
+  const total = totalPrice(DATA[NUMBER].coffee_list);
   const formatedTotal = formatPrice(total);
 
   const handleNewOrder = () => {
     console.log('Naruči');
-    navigate(`/order/${FAKE_DATA[NUMBER].id}`);
+    navigate(`/orders/${DATA[NUMBER].id}`);
   };
 
   return (
     <div
-      className={`fixed bottom-0 left-0 w-full bg-light-blue px-6 pt-2 pb-5 rounded-t-lg transition-transform duration-300 ${
+      className={`fixed bottom-0 left-0 w-full bg-light-blue px-6 pt-2 pb-5 rounded-t-lg z-10 transition-transform duration-300 ${
         isOpen ? 'translate-y-0' : 'translate-y-[calc(100%-6.7em)]'
       }`}
-      onClick={() => setIsOpen(!isOpen)}
     >
       <div
         className="bg-white/45 mx-auto mt-2 mb-4 rounded w-1/5 h-2 cursor-pointer"
@@ -37,7 +36,7 @@ const Cart = () => {
         <Button
           className="bg-dark-blue px-5 py-1 rounded-md font-medium leading-4.5"
           icon={<IconNextArrow />}
-          handleClick={handleNewOrder}
+          onClick={handleNewOrder}
         >
           Naruči
         </Button>
@@ -48,7 +47,7 @@ const Cart = () => {
         }`}
       >
         <hr className="my-5 text-white/20" />
-        {FAKE_DATA[NUMBER].coffee_list.map((item) => {
+        {DATA[NUMBER].coffee_list.map((item) => {
           return (
             <CartItem
               key={item.coffee_id}

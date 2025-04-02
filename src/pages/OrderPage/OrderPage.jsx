@@ -1,9 +1,8 @@
-import { useParams } from "react-router";
+import { useParams } from 'react-router';
 
-const OrderPage = ()=>{
+const OrderPage = () => {
   const { id } = useParams();
-  return(
-    <div>order page {id}</div>
-  )
-}
+  console.log(id);
+  return <div>order page {id}</div>;
+};
 export { OrderPage };
