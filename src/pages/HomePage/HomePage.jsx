@@ -1,4 +1,6 @@
-import { ShopCart } from '@/components/ShopCart/';
+import { COFFEE_DATA } from "@/data/coffee_data.json";
+import { Cart } from "@/components/";
+
 
 const HomePage = () => {
   console.log(COFFEE_DATA);
@@ -15,8 +17,9 @@ const HomePage = () => {
           />
         );
       })}
-      <ShopCart />
+      <Cart />
     </div>
   );
 };
 export { HomePage };
+1

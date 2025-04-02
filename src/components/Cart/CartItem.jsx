@@ -1,5 +1,5 @@
 import { IconCross } from '@/assets/icons/';
-const ShopCartItem = ({ id, name, amount, onRemove }) => {
+const CartItem = ({ id, name, amount, onRemove }) => {
   return (
     <li
       className="flex justify-between items-center my-1 py-1 font-medium text-white"
@@ -19,4 +19,4 @@ const ShopCartItem = ({ id, name, amount, onRemove }) => {
   );
 };
 
-export { ShopCartItem };
+export { CartItem };
