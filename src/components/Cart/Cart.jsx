@@ -2,20 +2,20 @@ import { useState } from 'react';
 import { Button } from '../ui/Button';
 import { IconNextArrow } from '@/assets/icons';
 import { CartItem } from './CartItem';
-import DATA from '@/data/orders_data.json';
 import { totalPrice, formatPrice } from '@/utils';
 import { useNavigate } from 'react-router';
+import { useCartContext } from '@/hooks/useCartContext';
 
-const NUMBER = 4;
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { state } = useCartContext();
   const navigate = useNavigate();
-  const total = totalPrice(DATA[NUMBER].coffee_list);
+
+  const total = totalPrice(state.coffee_list);
   const formatedTotal = formatPrice(total);
 
   const handleNewOrder = () => {
-    console.log('Naruči');
-    navigate(`/orders/${DATA[NUMBER].id}`);
+    navigate(`/orders/${state.id}`);
   };
 
   return (
@@ -37,6 +37,7 @@ const Cart = () => {
           className="bg-dark-blue px-5 py-1 rounded-md font-medium leading-4.5"
           icon={<IconNextArrow />}
           onClick={handleNewOrder}
+          disabled={state.coffee_list.length === 0}
         >
           Naruči
         </Button>
@@ -47,7 +48,7 @@ const Cart = () => {
         }`}
       >
         <hr className="my-5 text-white/20" />
-        {DATA[NUMBER].coffee_list.map((item) => {
+        {state.coffee_list.map((item) => {
           return (
             <CartItem
               key={item.coffee_id}

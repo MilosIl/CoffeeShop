@@ -9,7 +9,7 @@ import {
 import { Select, Button } from '@/components/ui';
 import { BEAN, MILK } from '@/constants';
 import { useState } from 'react';
-
+import { useCartContext } from '../hooks/useCartContext';
 
 const CoffeeCard = ({ id, name, price, description }) => {
   const [isToggled, setIsToggled] = useState(false);
@@ -17,6 +17,8 @@ const CoffeeCard = ({ id, name, price, description }) => {
   const [selectedSize, setSelectedSize] = useState('small');
   const [selectedBean, setSelectedBean] = useState(BEAN[0]);
   const [selectedMilk, setSelectedMilk] = useState(MILK[0]);
+
+  const { action } = useCartContext();
 
   const handleToggle = () => {
     setIsToggled(true);
@@ -37,19 +39,21 @@ const CoffeeCard = ({ id, name, price, description }) => {
     let multiplier = 1;
     if (selectedSize === 'medium') multiplier = 1.5;
     if (selectedSize === 'large') multiplier = 2;
-
-    const finalPrice = price * multiplier * counter;
+    const finalPrice = price * multiplier;
 
     const coffeeOrder = {
       id: `order_${id}`,
       coffee_name: name,
-      price: finalPrice,
+      price: finalPrice, 
       size: selectedSize,
       bean: selectedBean,
       milk: selectedMilk,
       quantity: counter,
-    };
-    console.log('Porudzbina dodata u korpu:', coffeeOrder);
+      total_price: finalPrice * counter, 
+    };  
+
+    action({ type: 'add', payload: coffeeOrder });
+  
   };
 
   return (
