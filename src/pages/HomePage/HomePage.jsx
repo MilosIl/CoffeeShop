@@ -1,8 +1,7 @@
-import { CoffeeCard } from '@/components';
 import COFFEE_DATA from '@/data/coffee_data.json';
+import { Cart, CoffeeCard } from '@/components/';
 
 const HomePage = () => {
-  console.log(COFFEE_DATA);
   return (
     <div className="flex md:flex-row flex-col md:flex-wrap gap-2">
       {COFFEE_DATA.map((coffee) => {
@@ -16,7 +15,9 @@ const HomePage = () => {
           />
         );
       })}
+      <Cart />
     </div>
   );
 };
 export { HomePage };
+1;
