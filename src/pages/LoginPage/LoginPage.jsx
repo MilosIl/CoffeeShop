@@ -1,4 +1,6 @@
 import { IconLogo } from "../../assets/icons/IconLogo";
+import { Input } from "../../components/ui/Input";
+import { useState } from "react";
 
 const LoginPage = () => {
   return <div>
@@ -11,22 +13,21 @@ const LoginPage = () => {
         </div>
         <h2 className=" text-[#404040] text-center text-lg font-semibold mb-4">Prijavi se</h2>
         <form>
-          <label className="block text-[#164864] pt-2 font-medium">Email</label>
-          <input
+
+          <Input
+            label="Email"
+            id="email"
             type="email"
             placeholder="Unesite Email adresu"
-            className="font-montserrat text-[12px] font-medium italic w-full p-2 mt-2 border-[#E8E8E8] rounded-md bg-[#E8E8E8] focus:outline-none focus:ring-[#E8E8E8]"
-            style={{ boxShadow: '0px 2px 4px 0px #00000040' }}
           />
 
-          <label className="block text-[#164864] pt-2 mt-4 font-medium">Lozinka</label>
-          <input
+
+          <Input
+            label="Lozinka"
+            id="password"
             type="password"
             placeholder="Unesite lozinku"
-            className="font-montserrat text-[12px] font-medium italic w-full p-2 mt-2 border-[#E8E8E8] rounded-md bg-[#E8E8E8] focus:outline-none focus:ring-[#E8E8E8]"
-            style={{ boxShadow: '0px 2px 4px 0px #00000040' }}
           />
-
           <div className="text-center mt-10">
             <a href="#" className="text-light-blue font-semibold text-[12px] underline decoration-light-blue">
               Zaboravili ste lozinku?
