@@ -4,7 +4,7 @@ const Input = ({ label, id, type, placeholder, value, onChange, error }) => {
   return (
     <>
       <label htmlFor={id}>
-        <span className="mb-2 font-medium text-dark-blue text-primary">
+        <span className="block text-dark-blue pt-2 mt-4 font-medium">
           {label}
         </span>
         <input
@@ -13,7 +13,8 @@ const Input = ({ label, id, type, placeholder, value, onChange, error }) => {
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className="bg-[#e8e8e8] shadow-[0px_2px_4px_0px_#00000040] mb-2 p-2 rounded-md focus-within:outline-0 w-full text-[#404040] placeholder:text-[#7D7D7D] text-xs placeholder:italic"
+          className="font-montserrat text-[12px] font-medium italic w-full p-2 mt-2 border-[#E8E8E8] rounded-md bg-[#E8E8E8] focus:outline-none focus:ring-[#E8E8E8]"
+          style={{ boxShadow: '0px 2px 4px 0px #00000040' }}
         />
         {error && (
           <div className="flex items-center gap-[5px]">
