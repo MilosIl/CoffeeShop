@@ -1,2 +1,3 @@
-export * from './formatPrice'
-export * from './totalPrice'
+export * from './formatPrice';
+export * from './totalPrice';
+export * from './capitelizeFirstLetter';
