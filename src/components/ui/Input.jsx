@@ -4,7 +4,7 @@ const Input = ({ label, id, type, placeholder, value, onChange, error }) => {
   return (
     <>
       <label htmlFor={id}>
-        <span className="block text-[#164864] pt-2 mt-4 font-medium">
+        <span className="block text-dark-blue pt-2 mt-4 font-medium">
           {label}
         </span>
         <input

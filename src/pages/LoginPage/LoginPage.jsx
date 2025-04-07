@@ -1,13 +1,21 @@
 import { IconLogo } from "../../assets/icons/IconLogo";
 import { Input } from "../../components/ui/Input";
-import { useState } from "react";
+
 
 const LoginPage = () => {
   return <div>
     <div
       className="flex items-center justify-center min-h-screen bg-gradient-to-b font-montserrat"
       style={{ background: 'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)' }}>
-      <div className="bg-white pt-[58px] px-[25px] pb-[104px] rounded-[26px] border-[1px] border-dark-blue shadow-lg w-96">
+      <div className="bg-white pt-[58px] px-[25px] pb-[104px] rounded-[26px] border-[1px] border-dark-blue w-96"
+        style={{
+          boxShadow: `0px 16px 35px 0px rgba(0, 0, 0, 0.10),
+              0px 64px 64px 0px rgba(0, 0, 0, 0.09),
+              0px 145px 87px 0px rgba(0, 0, 0, 0.05),
+              0px 258px 103px 0px rgba(0, 0, 0, 0.01),
+              0px 403px 113px 0px rgba(0, 0, 0, 0.00)`
+        }}>
+
         <div className="flex justify-center mb-4">
           <IconLogo />
         </div>
@@ -60,5 +68,4 @@ const LoginPage = () => {
   </div >;
 };
 export { LoginPage };
-
 
