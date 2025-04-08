@@ -1,5 +1,11 @@
 import { Route, Routes } from 'react-router';
-import { HomePage, RegisterPage, LoginPage, OrderPage, OrdersPage } from '../pages/';
+import {
+  HomePage,
+  RegisterPage,
+  LoginPage,
+  OrderPage,
+  OrdersPage,
+} from '../pages/';
 
 const AppRouter = () => {
   return (
@@ -10,7 +16,6 @@ const AppRouter = () => {
       <Route path="/orders/:id" element={<OrderPage />} />
       <Route path="/orders/" element={<OrdersPage />} />
     </Routes>
-
   );
 };
 export { AppRouter };

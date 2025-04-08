@@ -17,7 +17,7 @@ const Cart = () => {
   const handleNewOrder = () => {
     navigate(`/orders/${state.id}`);
   };
-
+console.log(state)
   return (
     <div
       className={`fixed bottom-0 left-0 w-full bg-light-blue px-6 pt-2 pb-5 rounded-t-lg z-10 transition-transform duration-300 ${

@@ -18,4 +18,3 @@ const CartProvider = ({ children }) => {
 };
 
 export { CartProvider };
-
