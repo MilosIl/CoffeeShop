@@ -1,6 +1,6 @@
 import { IconError } from '../../assets/icons';
 
-const Input = ({ label, id, type, placeholder, value, onChange, error }) => {
+const Input = ({ label, id, name, type, placeholder, value, onChange, error }) => {
   return (
     <>
       <label htmlFor={id}>
@@ -9,6 +9,7 @@ const Input = ({ label, id, type, placeholder, value, onChange, error }) => {
         </span>
         <input
           id={id}
+          name={name}
           type={type}
           placeholder={placeholder}
           value={value}

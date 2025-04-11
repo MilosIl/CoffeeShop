@@ -19,7 +19,7 @@ const LoginPage = () => {
         <div className="flex justify-center mb-4">
           <IconLogo />
         </div>
-        <h2 className=" text-[#404040] text-center text-lg font-semibold mb-4">Prijavi se</h2>
+        <h2 className=" text-[#404040] text-center text-[16px] font-semibold mb-4">Prijavi se</h2>
         <form>
 
           <Input
@@ -54,7 +54,7 @@ const LoginPage = () => {
         </form>
         <p className="text-center text-[12px] font-medium mt-8">
           Još uvek nemate kreiran nalog?
-          <a href="#" className="text-light-blue font-semibold text-[12px] underline decoration-light-blue">
+          <a href="/register" className="text-light-blue font-semibold text-[12px] underline decoration-light-blue ml-1">
             Registrujte se
           </a>
         </p>
