@@ -7,7 +7,7 @@ import { Timer } from './components/Timer';
 
 const OrderPage = () => {
   const { id } = useParams();
-  const { state, action } = useCartContext();
+  const { state } = useCartContext();
 
   return (
     <div className="flex flex-col items-center">
