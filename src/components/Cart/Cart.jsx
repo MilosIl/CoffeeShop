@@ -5,19 +5,29 @@ import { CartItem } from './CartItem';
 import { totalPrice, formatPrice } from '@/utils';
 import { useNavigate } from 'react-router';
 import { useCartContext } from '@/hooks/useCartContext';
+import { useOrders } from '@/lib/localStorageService';
 
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { state } = useCartContext();
   const navigate = useNavigate();
-
+  const [orders, setOrders] = useOrders();
   const total = totalPrice(state.coffee_list);
   const formatedTotal = formatPrice(total);
 
   const handleNewOrder = () => {
-    navigate(`/orders/${state.id}`);
+    const nextOrderId = orders.length > 0 ? orders.length + 1 : 1;
+    const newOrder = {
+      id: `order_${nextOrderId}`,
+      coffee_list: [...state.coffee_list],
+      status: 'pending',
+      // needs to be changed for logged user
+      user_id: 'user_1',
+    };
+    setOrders([...orders, newOrder]);
+    navigate(`/orders/${newOrder.id}`);
   };
-console.log(state)
+
   return (
     <div
       className={`fixed bottom-0 left-0 w-full bg-light-blue px-6 pt-2 pb-5 rounded-t-lg z-10 transition-transform duration-300 ${

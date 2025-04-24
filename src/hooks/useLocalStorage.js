@@ -10,7 +10,7 @@ const useLocalStorage = (key, initialValue) => {
         return initialValue;
       }
     } catch (error) {
-      console.log("Error getting from localStorage");
+      console.log(error);
       return initialValue;
     }
   });
@@ -19,7 +19,7 @@ const useLocalStorage = (key, initialValue) => {
     try {
       localStorage.setItem(key, JSON.stringify(newValue));
     } catch (error) {
-      console.log("Error saving to localStorage");
+      console.log(error);
     }
   };
   const deleteValue = () => {
@@ -27,7 +27,7 @@ const useLocalStorage = (key, initialValue) => {
       localStorage.removeItem(key);
       setValue(initialValue);
     } catch (error) {
-      console.log("Error deleting from localStorage");
+      console.log(error);
     }
   };
   return [value, saveValue, deleteValue];
