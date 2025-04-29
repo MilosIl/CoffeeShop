@@ -49,12 +49,12 @@ const LoginPage = () => {
               placeholder="Unesite lozinku"
             />
             <div className="mt-10 text-center">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="font-semibold text-[12px] text-light-blue decoration-light-blue underline"
               >
                 Zaboravili ste lozinku?
-              </a>
+              </Link>
             </div>
 
             <button
@@ -71,7 +71,7 @@ const LoginPage = () => {
           <p className="mt-8 font-medium text-xs text-center">
             Još uvek nemate kreiran nalog?
             <Link
-              href="/register"
+              to="/register"
               className="ml-1 font-semibold text-light-blue text-xs decoration-light-blue underline"
             >
               Registrujte se
