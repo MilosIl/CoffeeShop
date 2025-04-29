@@ -4,27 +4,27 @@
     "email": "admin@test.com",
     "password": "admin",
     "roll": "owner",
-    "fullName":"Admin Admincic"
+    "fullName": "Admin Admincic"
   },
   {
     "id": "user_2",
     "email": "milos@test.com",
     "password": "Sifra123",
     "roll": "customer",
-    "fullName":"Milos Milosevic"
+    "fullName": "Milos Milosevic"
   },
   {
     "id": "user_3",
     "email": "marko@test.com",
     "password": "Sifra123",
     "roll": "customer",
-    "fullName":"Marko Markovic"
+    "fullName": "Marko Markovic"
   },
   {
     "id": "user_4",
     "email": "test@test.com",
     "password": "Sifra123",
     "roll": "customer",
-    "fullName":"Petar Petrovic"
+    "fullName": "Petar Petrovic"
   }
 ]

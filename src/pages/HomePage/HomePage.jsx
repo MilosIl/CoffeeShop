@@ -7,22 +7,24 @@ const HomePage = () => {
   const isLoading = useLoader();
 
   return (
-    <div className="flex md:flex-row flex-col md:flex-wrap gap-2">
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          {COFFEE_DATA.map((coffee) => (
-            <CoffeeCard
-              key={coffee.id}
-              id={coffee.id}
-              name={coffee.name}
-              price={coffee.price}
-              description={coffee.description}
-            />
-          ))}
-        </>
-      )}
+    <div className="relative">
+      <div className="flex md:flex-row flex-col md:flex-wrap items-start gap-2 pb-[calc(6.7em+1rem)]">
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            {COFFEE_DATA.map((coffee) => (
+              <CoffeeCard
+                key={coffee.id}
+                id={coffee.id}
+                name={coffee.name}
+                price={coffee.price}
+                description={coffee.description}
+              />
+            ))}
+          </>
+        )}
+      </div>
       <Cart />
     </div>
   );

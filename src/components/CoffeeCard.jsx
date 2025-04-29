@@ -44,16 +44,15 @@ const CoffeeCard = ({ id, name, price, description }) => {
     const coffeeOrder = {
       id: `order_${id}`,
       coffee_name: name,
-      price: finalPrice, 
+      price: finalPrice,
       size: selectedSize,
       bean: selectedBean,
       milk: selectedMilk,
       quantity: counter,
-      total_price: finalPrice * counter, 
-    };  
+      total_price: finalPrice * counter,
+    };
 
     action({ type: 'add', payload: coffeeOrder });
-  
   };
 
   return (

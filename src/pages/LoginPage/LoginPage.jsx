@@ -1,18 +1,26 @@
-import { IconLogo } from "../../assets/icons/IconLogo";
-import { Input } from "../../components/ui/Input";
-
+import { IconLogo } from '../../assets/icons/IconLogo';
+import { Input } from '../../components/ui/Input';
 
 const LoginPage = () => {
+
   return <div>
     <div
       className="flex items-center justify-center min-h-screen bg-gradient-to-b"
       style={{ background: 'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)' }}>
-      <div className="bg-white pt-14 px-6 pb-24 rounded-3xl border-[1px] border-dark-blue w-96"
+      <div className="bg-white pt-14 px-6 pb-24 rounded-3xl border border-dark-blue w-96"
         style={{
-          boxShadow: `0px 16px 35px 0px rgba(0, 0, 0, 0.10),
+          background:
+            'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)',
+        }}
+      >
+        <div
+          className="bg-white pt-[58px] px-[25px] pb-[104px] rounded-[26px] border-[1px] border-dark-blue w-96"
+          style={{
+            boxShadow: `0px 16px 35px 0px rgba(0, 0, 0, 0.10),
               0px 64px 64px 0px rgba(0, 0, 0, 0.09),
               0px 145px 87px 0px rgba(0, 0, 0, 0.05),
               0px 258px 103px 0px rgba(0, 0, 0, 0.01),
+
               0px 403px 113px 0px rgba(0, 0, 0, 0.00)`
         }}>
 
@@ -28,8 +36,20 @@ const LoginPage = () => {
             type="email"
             placeholder="Unesite Email adresu"
           />
-
-
+            <Input
+              label="Lozinka"
+              id="password"
+              type="password"
+              placeholder="Unesite lozinku"
+            />
+            <div className="text-center mt-10">
+              <a
+                href="#"
+                className="text-light-blue font-semibold text-[12px] underline decoration-light-blue"
+              >
+                Zaboravili ste lozinku?
+              </a>
+            </div>
           <Input
             label="Lozinka"
             id="password"
@@ -60,12 +80,6 @@ const LoginPage = () => {
         </p>
       </div>
     </div>
-
-
-
-
-
-  </div >;
+  );
 };
 export { LoginPage };
-
