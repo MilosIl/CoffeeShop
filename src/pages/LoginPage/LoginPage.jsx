@@ -1,8 +1,25 @@
-import { Link } from 'react-router';
-import { IconLogo } from '../../assets/icons/IconLogo';
-import { Input } from '../../components/ui/Input';
+import { Link, useNavigate } from 'react-router';
+import { IconLogo } from '@/assets/icons';
+import { Input, Button } from '@/components/ui/';
+import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 const LoginPage = () => {
+  const [formValues, setFormValues] = useState({
+    email: '',
+    password: '',
+  });
+  const {login}= useAuth()
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const { email, password } = formValues;
+    if (email && password) {
+      await login(email, password);
+      navigate('/');
+    }
+
+  };
   return (
     <div
       className="flex justify-center items-center bg-gradient-to-b min-h-screen"
@@ -12,7 +29,7 @@ const LoginPage = () => {
       }}
     >
       <div
-        className="border-dark-blue rounded-3xl w-96 pborder"
+        className="border-dark-blue rounded-3xl w-96"
         style={{
           background:
             'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)',
@@ -25,7 +42,6 @@ const LoginPage = () => {
               0px 64px 64px 0px rgba(0, 0, 0, 0.09),
               0px 145px 87px 0px rgba(0, 0, 0, 0.05),
               0px 258px 103px 0px rgba(0, 0, 0, 0.01),
-
               0px 403px 113px 0px rgba(0, 0, 0, 0.00)`,
           }}
         >
@@ -35,18 +51,26 @@ const LoginPage = () => {
           <h2 className="mb-4 font-semibold text-[#404040] text-base text-center">
             Prijavi se
           </h2>
-          <form>
+          <form onSubmit={handleLogin}>
             <Input
               label="Email"
               id="email"
               type="email"
               placeholder="Unesite Email adresu"
+              value={formValues.email}
+              onChange={(e) =>
+                setFormValues({ ...formValues, email: e.target.value })
+              }
             />
             <Input
               label="Lozinka"
               id="password"
               type="password"
               placeholder="Unesite lozinku"
+              value={formValues.password}
+              onChange={(e) =>
+                setFormValues({ ...formValues, password: e.target.value })
+              }
             />
             <div className="mt-10 text-center">
               <Link
@@ -57,16 +81,12 @@ const LoginPage = () => {
               </Link>
             </div>
 
-            <button
+            <Button
               type="submit"
-              className="shadow-md mt-6 py-2.5 rounded-lg w-full font-semibold text-white text-sm"
-              style={{
-                background:
-                  'linear-gradient(180deg, #164864 0.59%, #2C91CA 214.21%)',
-              }}
+              className="bg-[linear-gradient(180deg,_#164864_0.59%,_#2C91CA_214.21%)] shadow-md mt-6 py-2.5 rounded-lg w-full font-semibold text-white text-sm"
             >
               Prijavi se
-            </button>
+            </Button>
           </form>
           <p className="mt-8 font-medium text-xs text-center">
             Još uvek nemate kreiran nalog?

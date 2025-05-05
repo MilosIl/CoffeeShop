@@ -9,3 +9,4 @@ export * from './IconMinus';
 export * from './IconShopCart';
 export * from './IconCross';
 export * from './IconClock';
+export * from './IconCoffee';
