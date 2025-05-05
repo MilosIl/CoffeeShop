@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const LOADER_TIME = 2000;
+const LOADER_TIME = 300;
 
 const useLoader = (time = LOADER_TIME) => {
   const [isLoading, setIsLoading] = useState(true);

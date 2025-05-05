@@ -14,7 +14,7 @@ const OrdersContent = () => {
       </div>
 
       {data.map((item) => {
-        return <OrderItem key={item.id} id={item.id} list={item.coffee_list} />;
+        return <OrderItem id={item.id} list={item.coffee_list} />;
       })}
     </div>
   );

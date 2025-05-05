@@ -1,11 +1,12 @@
 import { Link } from 'react-router';
-import { IconLogo, IconError } from '../../assets/icons';
-import { Input, Button } from '../../components/ui';
+import { IconLogo, IconError } from '@/assets/icons';
+import { Input } from '@/components/ui/Input';
 import { useState, useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 const RegisterPage = () => {
   const initialValues = {
-    username: '',
+    fullName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -14,26 +15,22 @@ const RegisterPage = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [existingEmails, setExistingEmails] = useState([]);
-
+  const {register} = useAuth()
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     setFormErrors(validate(formValues, existingEmails));
+    await register(formValues.email, formValues.password, formValues.fullName);
     setIsSubmit(true);
   };
 
   useEffect(() => {
-    console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-
       setExistingEmails((prevEmails) => [...prevEmails, formValues.email]);
-
       setFormValues(initialValues);
       setIsSubmit(false);
     }
@@ -42,8 +39,8 @@ const RegisterPage = () => {
   const validate = (values, existingEmails) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!values.username) {
-      errors.username = (
+    if (!values.fullName) {
+      errors.fullName = (
         <>
           <IconError /> Ime i Prezime je neophodno
         </>
@@ -119,15 +116,15 @@ const RegisterPage = () => {
           <form onSubmit={handleSubmit}>
             <Input
               label="Ime i Prezime"
-              id="username"
-              name="username"
+              id="fullName"
+              name="fullName"
               type="text"
               placeholder="Unesite Ime i Prezime"
-              value={formValues.username}
+              value={formValues.fullName}
               onChange={handleChange}
             />
             <p className="flex gap-1.5 mt-2 font-medium text-red text-xs">
-              {formErrors.username}
+              {formErrors.fullName}
             </p>
             <Input
               label="Email"

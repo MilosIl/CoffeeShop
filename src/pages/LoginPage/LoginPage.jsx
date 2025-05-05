@@ -1,8 +1,27 @@
-import { Link } from 'react-router';
-import { IconLogo } from '../../assets/icons/IconLogo';
-import { Input, Button } from '../../components/ui/';
+import { Link, useNavigate } from 'react-router';
+import { IconLogo } from '@/assets/icons';
+import { Input, Button } from '@/components/ui/';
+import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
+
+
 
 const LoginPage = () => {
+  const [formValues, setFormValues] = useState({
+    email: '',
+    password: '',
+  });
+  const {login}= useAuth()
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const { email, password } = formValues;
+    if (email && password) {
+      await login(email, password);
+      navigate('/');
+    }
+
+  };
   return (
     <div
       className="flex justify-center items-center bg-gradient-to-b min-h-screen background-gradient">
@@ -16,18 +35,26 @@ const LoginPage = () => {
           <h2 className="mb-4 font-semibold text-[#404040] text-base text-center">
             Prijavi se
           </h2>
-          <form>
+          <form onSubmit={handleLogin}>
             <Input
               label="Email"
               id="email"
               type="email"
               placeholder="Unesite Email adresu"
+              value={formValues.email}
+              onChange={(e) =>
+                setFormValues({ ...formValues, email: e.target.value })
+              }
             />
             <Input
               label="Lozinka"
               id="password"
               type="password"
               placeholder="Unesite lozinku"
+              value={formValues.password}
+              onChange={(e) =>
+                setFormValues({ ...formValues, password: e.target.value })
+              }
             />
             <div className="mt-10 text-center">
               <Link
@@ -41,6 +68,7 @@ const LoginPage = () => {
             <Button
               type="submit"
               className="shadow-md mt-6 py-2.5 rounded-lg w-full font-semibold text-white text-sm button-gradient">
+
               Prijavi se
             </Button>
           </form>
