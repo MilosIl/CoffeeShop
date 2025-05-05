@@ -104,22 +104,9 @@ const RegisterPage = () => {
   return (
     <div>
       <div
-        className="flex justify-center items-center bg-gradient-to-b min-h-screen"
-        style={{
-          background:
-            'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)',
-        }}
-      >
+        className="flex justify-center items-center bg-gradient-to-b min-h-screen background-gradient">
         <div
-          className="bg-white px-6 pt-14 pb-24 border-[1px] border-dark-blue rounded-3xl w-96"
-          style={{
-            boxShadow: `0px 16px 35px 0px rgba(0, 0, 0, 0.10),
-          0px 64px 64px 0px rgba(0, 0, 0, 0.09),
-          0px 145px 87px 0px rgba(0, 0, 0, 0.05),
-          0px 258px 103px 0px rgba(0, 0, 0, 0.01),
-          0px 403px 113px 0px rgba(0, 0, 0, 0.00)`,
-          }}
-        >
+          className="bg-white px-6 pt-14 pb-24 border border-dark-blue rounded-3xl w-96 box-shadow">
           <div className="flex justify-center mb-4">
             <IconLogo />
           </div>
@@ -143,7 +130,7 @@ const RegisterPage = () => {
               label="Email"
               id="email"
               name="email"
-              type="email"
+              type="text"
               placeholder="Unesite Email adresu"
               value={formValues.email}
               onChange={handleChange}
@@ -176,16 +163,13 @@ const RegisterPage = () => {
             <p className="flex gap-1.5 mt-2 font-medium text-red text-xs">
               {formErrors.confirmPassword}
             </p>
-            <button
+            <Button
               type="submit"
-              className="shadow-md mt-12 py-2.5 rounded-lg w-full font-semibold text-white text-sm"
-              style={{
-                background:
-                  'linear-gradient(180deg, #164864 0.59%, #2C91CA 214.21%)',
-              }}
+              className="shadow-md mt-12 py-2.5 rounded-lg w-full font-semibold text-white text-sm button-gradient"
+
             >
               Registruj se
-            </button>
+            </Button>
           </form>
           <p className="mt-8 font-medium text-xs text-center">
             Već imate kreiran nalog?

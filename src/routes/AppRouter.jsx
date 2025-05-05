@@ -5,6 +5,7 @@ import {
   LoginPage,
   OrderPage,
   OrdersPage,
+  NotFound,
 } from '../pages/';
 import { ProfilePage } from '../pages/ProfilePage/ProfilePage';
 
@@ -17,6 +18,7 @@ const AppRouter = () => {
       <Route path="/orders/:id" element={<OrderPage />} />
       <Route path="/orders/" element={<OrdersPage />} />
       <Route path="/profile/:id" element={<ProfilePage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

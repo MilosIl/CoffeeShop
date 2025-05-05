@@ -4,6 +4,8 @@ import { Input, Button } from '@/components/ui/';
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 
+
+
 const LoginPage = () => {
   const [formValues, setFormValues] = useState({
     email: '',
@@ -22,29 +24,11 @@ const LoginPage = () => {
   };
   return (
     <div
-      className="flex justify-center items-center bg-gradient-to-b min-h-screen"
-      style={{
-        background:
-          'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)',
-      }}
-    >
+      className="flex justify-center items-center bg-gradient-to-b min-h-screen background-gradient">
       <div
-        className="border-dark-blue rounded-3xl w-96"
-        style={{
-          background:
-            'linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%)',
-        }}
-      >
+        className="border-dark-blue rounded-3xl w-96 pborder">
         <div
-          className="bg-white px-[25px] pt-[58px] pb-[104px] border-[1px] border-dark-blue rounded-[26px] w-96"
-          style={{
-            boxShadow: `0px 16px 35px 0px rgba(0, 0, 0, 0.10),
-              0px 64px 64px 0px rgba(0, 0, 0, 0.09),
-              0px 145px 87px 0px rgba(0, 0, 0, 0.05),
-              0px 258px 103px 0px rgba(0, 0, 0, 0.01),
-              0px 403px 113px 0px rgba(0, 0, 0, 0.00)`,
-          }}
-        >
+          className="bg-white px-[25px] pt-[58px] pb-[104px] border-[1px] border-dark-blue rounded-[26px] w-96 box-shadow">
           <div className="flex justify-center mb-4">
             <IconLogo />
           </div>
@@ -83,8 +67,8 @@ const LoginPage = () => {
 
             <Button
               type="submit"
-              className="bg-[linear-gradient(180deg,_#164864_0.59%,_#2C91CA_214.21%)] shadow-md mt-6 py-2.5 rounded-lg w-full font-semibold text-white text-sm"
-            >
+              className="shadow-md mt-6 py-2.5 rounded-lg w-full font-semibold text-white text-sm button-gradient">
+
               Prijavi se
             </Button>
           </form>
